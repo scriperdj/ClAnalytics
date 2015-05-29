@@ -1,7 +1,8 @@
 = Code for given Problem
 
 
-I have coded three applications to execute the problem statement you have given,
+I have coded three applications to execute the problem statement you have given
+
 * Java batch application to generate mock User tracking data.
 * Java batch application to load the generated mock data to Google cloud Bigquery dataset. 
 * Web application to view statistical data from Bigquery dataset created in above step. 
