@@ -32,7 +32,7 @@ TABLE_ID
 
 == Application to viewing statistical data (bqapp):
 
-* The web application executes the below queries in BigQuery using the service account credentials, and displays the data using morris.js charts.
+* The web application executes the below queries in BigQuery through a java class using the service account credentials, and displays the data using morris.js charts.
 
 Query shows users who login frequently:
 [source,sql]
