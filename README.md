@@ -1,4 +1,3 @@
-appengine-skeleton
-=============================
+# Source codes for generating, loading and querying BigQuery 
 
-This is a generated application from the appengine-skeleton archetype.
+Please build using maven.
