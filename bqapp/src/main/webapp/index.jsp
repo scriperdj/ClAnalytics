@@ -1,8 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<jsp:useBean id = "querybq" class="com.bqapp.QueryBq" />
-<% String userData = querybq.getData(); %>
+
+
+<jsp:useBean id = "querybq" class="com.bqapp.QueryBig" />
+<% String userData = querybq.getUsers(); %>
+<% String productData = querybq.getProducts(); %>
+<% String browserData = querybq.getBrowsers(); %>
+<% String locationData = querybq.getLocations(); %>
+<% String deviceData = querybq.getDevice(); %>
+<% String screenData = querybq.getScreen(); %>
+<% String categoryData = querybq.getCategories(); %>
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -49,7 +57,7 @@
 									<div class="col-sm-5 mini-stats">
 										<div id="bar-Categories" class="morris-chart" style="height: 170px;"></div>
 										<div class="sales-report-data">
-											<span class="pull-left">The God Father <%= userData %></span><span class="pull-right">123456</span>
+											<span class="pull-left">The God Father </span><span class="pull-right">123456</span>
 											<div class="progress progress-xs">
 												<div style="width: 78%;" class="progress-bar bg-blue-1"></div>
 											</div>
@@ -171,11 +179,12 @@
 	new Morris.Bar({
 	    element: 'bar-Categories',
 	    data: [
-	      {category: 'Books', count: 136},
+			<%= categoryData %>
+	      /* {category: 'Books', count: 136},
 	      {category: 'Moview', count: 137},
 	      {category: 'Laptops', count: 275},
 	      {category: 'Tablets', count: 380},
-	      {category: 'Phones', count: 655}
+	      {category: 'Phones', count: 655} */
 	      
 	    ],
 	    xkey: 'category',
@@ -188,11 +197,12 @@
 	new Morris.Bar({
 	      element: 'bar-Loc',
 	      data: [
-	        { y: 'Chennai', a: 952},
+			<%= locationData %>
+	        /* { y: 'Chennai', a: 952},
 	        { y: 'Bangalore', a: 985},
 	        { y: 'Coimbatore', a: 955},
 	        { y: 'Pondicherry', a: 785 },
-	        { y: 'Delhi', a: 700 }
+	        { y: 'Delhi', a: 700 } */
 	      ],
 	      xkey: 'y',
 	      ykeys: ['a'],
@@ -208,7 +218,8 @@
 	new Morris.Bar({
 	      element: 'bar-Usr',
 	      data: [
-	        { y: 'User1', a: 952},
+			<%= userData %>
+	        /* { y: 'User1', a: 952},
 	        { y: 'User2', a: 985},
 	        { y: 'User3', a: 955},
 	        { y: 'User4', a: 785 },
@@ -217,7 +228,7 @@
 	        { y: 'User7', a: 421 },
 	        { y: 'User8', a: 725 },
 	        { y: 'User9', a: 350 },
-	        { y: 'User10', a: 120 }
+	        { y: 'User10', a: 120 } */
 	      ],
 	      xkey: 'y',
 	      ykeys: ['a'],
@@ -234,10 +245,11 @@
 		  element: 'donut-Browsers',
 		  resize: true,
 		  data: [
-		    {label: "Safari", value: 60},
+			<%= browserData %>
+		    /* {label: "Safari", value: 60},
 		    {label: "Chrome", value: 10},
 		    {label: "Internet Explorer", value: 10},
-		    {label: "Firefox", value: 20},
+		    {label: "Firefox", value: 20}, */
 		  ],
 		  formatter: function (y) { return y + "%" }
 		});
@@ -245,9 +257,10 @@
 		  element: 'donut-Screens',
 		  resize: true,
 		  data: [
-		    {label: "1024x728", value: 55},
+			<%= screenData %>
+		   /* {label: "1024x728", value: 55},
 		    {label: "1700x720", value: 30},
-		    {label: "1200x800", value: 20}
+		    {label: "1200x800", value: 20} */
 		  ],
 		  formatter: function (y) { return y + "%" }
 		});
@@ -255,10 +268,11 @@
 		  element: 'donut-Devices',
 		  resize: true,
 		  data: [
-		    {label: "PC", value: 70},
+			<%= deviceData %>
+		    /* {label: "PC", value: 70},
 		    {label: "Laptop", value: 10},
 		    {label: "Notebook", value: 15},
-		    {label: "Phone", value: 5}
+		    {label: "Phone", value: 5} */
 		  ],
 		  formatter: function (y) { return y + "%" }
 		});

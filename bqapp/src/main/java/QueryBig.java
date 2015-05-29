@@ -27,32 +27,9 @@ import com.google.api.client.util.store.FileDataStoreFactory;
 public class QueryBig {
 
 	private static final String ACCOUNT_ID = "115999096908-3j05ovljtqh00j0lrphdhuelgp9squtl@developer.gserviceaccount.com";
-    private static final String KEY_FILE   = "C:/Users/scriperdj/Downloads/eec53c304895.p12";
+    private static final String KEY_FILE   = "WEB-INF/eec53c304895.p12";
     private static final String PROJECT_ID = "hip-voyager-95814";
-	
-	
 
-    public static void main(String[] args) throws IOException,InterruptedException  {
-		
-		QueryBig query = new QueryBig();
-		
-        String usersData = query.getUsers();
-		String productsData = query.getProducts();
-		String categoriesData = query.getCategories();
-		String browserData = query.getBrowsers();
-		String locationData = query.getLocations();
-		String deviceData = query.getDevice();
-		String screenData = query.getScreen(); 
-		System.out.println(usersData);
-		System.out.println(productsData);
-		System.out.println(categoriesData);
-		System.out.println(browserData);
-		System.out.println(locationData);
-		System.out.println(deviceData);
-		System.out.println(screenData);
-        
-    }
-	
 	public String getUsers() throws IOException,InterruptedException {
 		String querySql = "select Username, count(SessionId) as Login_count from (select Username, SessionId, count(SessionId) as scount from [SiteAnalytics.User_Activity] group by Username, SessionId order by scount DESC) group by Username order by Login_count DESC LIMIT 5";
 				
@@ -210,6 +187,28 @@ public class QueryBig {
 		}
 		return str;
 	}
+	
+	/*
+    public static void main(String[] args) throws IOException,InterruptedException  {
+		
+		QueryBig query = new QueryBig();
+		
+        String usersData = query.getUsers();
+		String productsData = query.getProducts();
+		String categoriesData = query.getCategories();
+		String browserData = query.getBrowsers();
+		String locationData = query.getLocations();
+		String deviceData = query.getDevice();
+		String screenData = query.getScreen(); 
+		System.out.println(usersData);
+		System.out.println(productsData);
+		System.out.println(categoriesData);
+		System.out.println(browserData);
+		System.out.println(locationData);
+		System.out.println(deviceData);
+		System.out.println(screenData);
+        
+    } */
 	
 
 }
