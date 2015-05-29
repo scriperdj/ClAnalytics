@@ -1,6 +1,6 @@
 = Code for given Problem
 
-[abstract]
+
 I have coded three applications to execute the problem statement you have given,
 * Java batch application to generate mock User tracking data.
 * Java batch application to load the generated mock data to Google cloud Bigquery dataset. 
@@ -73,4 +73,5 @@ select Location, count(Location) as count from [SiteAnalytics.User_Activity] gro
 === Web screen
 image:screenshots/webapp.JPG[] +
 
-Please use Maven to build.
+[abstract]
+Please use Maven for build.
